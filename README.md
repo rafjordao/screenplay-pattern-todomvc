@@ -1,64 +1,69 @@
-# Screenplay Pattern with Serenity BDD
+# Screenplay Pattern com Serenity BDD
 
-This project is a simple demonstration showing the difference between
-the [PageObject](http://martinfowler.com/bliki/PageObject.html)
-and the [Screenplay pattern](https://dzone.com/articles/page-objects-refactored-solid-steps-to-the-screenp),
-both implemented using the [Serenity BDD](http://serenity-bdd.info/#/) library and JUnit.
+Este projeto é uma demonstração simples mostrando a diferença entre
+o [PageObject](http://martinfowler.com/blinki/PageObject.html) pattern
+e o [Screenplay](https://dzone.com/articles/page-objects-refactored-solid-steps-to-the-screenp) pattern
+os dois implementados utilizando a biblioteca [Serenity BDD](http://serenity-bdd.info/#/) e JUnit.
 
-The web tests you'll find here run against the http://todomvc.com/examples/angularjs/#/ application and are organised
-by feature in packages under `src/test/java/net/serenitybdd/demos/todos/<pattern name>/features`.
+Os testes que você verá aqui rodam sobre a aplicação http://todomvc.com/examples/angularjs/#/ e são organizadas
+por features nos packages com o padrão `src/test/java/net/serenitybdd/demos/todos/<pattern name>/features`.
 
-By default the tests run on Chrome, so make sure you have the latest chromedriver instance on your system path.
-## PageObjects implementation
+Por padrão os testes rodam no Chrome, então certifique-se que tem o chromedriver mais atualizado em seu system path.
 
-These tests use pages and steps defined in `src/main/java/net/serenitybdd/demos/todos/pageobjects`.
+## implementação PageObjects
 
-The overall project structure is shown below:
+Estes testes utilizam pages e steps definidos em `src/main/java/net/serenitybdd/demos/todos/pageobjects`.
+
+A estrutura geral do projeto segue o seguinte modelo:
 ````
 + model
     Domain model classes
 + pages
     PageObjects
 + steps
-    Tasks and assertions performed by the "user"
+    Tasks e assertions performados pelo usuário "user"
 ````
 
-## Screenplay implementation
+## implementação Screenplay
 
-These tests use tasks, actions, questions and page elements defined in `src/main/java/net/serenitybdd/demos/todos/screenplay`.
+Estes testes utiliza tasks, actions, questions e page elementes definidos em
+`src/main/java/net/serenitybdd/demos/todos/screenplay`.
 
-The overall project structure is shown below:
+A estrutura geral do projeto segue o seguinte modelo:
 ````
 + model
     Domain model classes
 + tasks
     Business-level tasks
 + action
-    UI interactions
+    interações com a UI
 + pages
-    Page Objects and Page Elements
+    Page Objects e Page Elements
 + questions
-    Objects used to query the application
+    Objetos utilizados para fazer querys nas páginas
 ````
 
-## Running the project
+## Rodando o projeto
 
-To run the project you'll need JDK 1.8 and Maven installed.
+Para rodar o projeto você precisará do JDK 1.8 e o Maven instalados.
 
-### Screenplay and Cucumber
+### Screenplay e Cucumber
 
-The first demo shows the integration of Serenity BDD, Screenplay and Cucumber JVM.
-To run it, execute:
+O primeiro demo mostra a integração do Serenity BDD, Screenplay e 
+Cucumber JVM.
+
+Para rodar, execute: 
 
 ```
 mvn clean verify -Pcucumber
 ```
 
-### Screenplay and JUnit
+### Screenplay e JUnit
 
-The second demo covers the integration of Serenity BDD, Screenplay and JUnit.
+O segundo demo cobre a integração do Serenity BDD, Screenplay e
+JUnit.
 
-To run it, execute:
+Para rodar, execute:
 
 ```
 mvn clean verify -Pscreenplay
@@ -66,10 +71,11 @@ mvn clean verify -Pscreenplay
 
 ### Page Objects and JUnit
 
-We've also included a demo of how the tests you've just seen implemented using the Screenplay Pattern
-would have looked if they were implemented using the Page Objects.
+Nos também incluimos a demo de como os testes, que você acabou de ver
+que foram implementados utilizando o padrão screenplay,
+seriam caso eles fossem implementados utilizando o Page Objects.
 
-To run it, execute:
+Para rodar, execute:
 
 ```
 mvn clean verify -Ppageobjects
@@ -77,4 +83,4 @@ mvn clean verify -Ppageobjects
 
 ## Reporting
 
-The Serenity reports will be generated in the `target/site/serenity` directory.
+Os reports do Serneity serão gerados no diretório `target/site/serenity`.
